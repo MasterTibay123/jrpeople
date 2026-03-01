@@ -15,11 +15,19 @@ return [
     */
 
     'postmark' => [
+<<<<<<< HEAD
         'token' => env('POSTMARK_TOKEN'),
     ],
 
     'resend' => [
         'key' => env('RESEND_KEY'),
+=======
+        'key' => env('POSTMARK_API_KEY'),
+    ],
+
+    'resend' => [
+        'key' => env('RESEND_API_KEY'),
+>>>>>>> 5ea0e07 (Initial commit for Render + Aiven setup)
     ],
 
     'ses' => [

@@ -14,13 +14,21 @@ return new class extends Migration
         Schema::create('cache', function (Blueprint $table) {
             $table->string('key')->primary();
             $table->mediumText('value');
+<<<<<<< HEAD
             $table->integer('expiration');
+=======
+            $table->integer('expiration')->index();
+>>>>>>> 5ea0e07 (Initial commit for Render + Aiven setup)
         });
 
         Schema::create('cache_locks', function (Blueprint $table) {
             $table->string('key')->primary();
             $table->string('owner');
+<<<<<<< HEAD
             $table->integer('expiration');
+=======
+            $table->integer('expiration')->index();
+>>>>>>> 5ea0e07 (Initial commit for Render + Aiven setup)
         });
     }
 

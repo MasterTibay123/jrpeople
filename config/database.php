@@ -79,7 +79,11 @@ return [
             'strict' => true,
             'engine' => null,
             'options' => extension_loaded('pdo_mysql') ? array_filter([
+<<<<<<< HEAD
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+=======
+                (PHP_VERSION_ID >= 80500 ? \Pdo\Mysql::ATTR_SSL_CA : \PDO::MYSQL_ATTR_SSL_CA) => env('MYSQL_ATTR_SSL_CA'),
+>>>>>>> 5ea0e07 (Initial commit for Render + Aiven setup)
             ]) : [],
         ],
 
@@ -95,7 +99,11 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
             'search_path' => 'public',
+<<<<<<< HEAD
             'sslmode' => 'prefer',
+=======
+            'sslmode' => env('DB_SSLMODE', 'prefer'),
+>>>>>>> 5ea0e07 (Initial commit for Render + Aiven setup)
         ],
 
         'sqlsrv' => [

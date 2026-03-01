@@ -1,22 +1,15 @@
-﻿<Project Sdk="Devsense.Php.Sdk">
+<Project Sdk="Devsense.Php.Sdk">
   <PropertyGroup Label="Globals">
     <ProjectGuid>700a274c-5460-c7ba-e44b-e38e26c1d419</ProjectGuid>
   </PropertyGroup>
+
   <PropertyGroup>
-    <EnvName>Custom</EnvName>
-    <RuntimeVersion>8.4</RuntimeVersion>
+    <EnvName>PHPDev</EnvName>
+    <RuntimeVersion>8.2</RuntimeVersion>
     <WebRoot>public</WebRoot>
-    <SaveServerSettingsInUserFile>false</SaveServerSettingsInUserFile>
-    <PHPDevHostName>localhost</PHPDevHostName>
-    <PHPDevAutoPort>true</PHPDevAutoPort>
-    <PHPDevRouting />
-    <CustomServerUrl>http://localhost/TryHybridCsLaravelMaUI/</CustomServerUrl>
-    <CustomXdebugPort>8000</CustomXdebugPort>
-    <DebugMappingMethod>Automatic</DebugMappingMethod>
-    <DebugPathMapping />
-    <DBGpProxyEnabled>false</DBGpProxyEnabled>
-    <DBGpProxyHost />
-    <DBGpProxyPort>9001</DBGpProxyPort>
-    <IdeKey>AB7CFFF7</IdeKey>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Dockerfile" />
+  </ItemGroup>
 </Project>

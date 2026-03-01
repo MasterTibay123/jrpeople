@@ -10,4 +10,12 @@ export default defineConfig({
         }),
         tailwindcss(),
     ],
+<<<<<<< HEAD
+=======
+    server: {
+        watch: {
+            ignored: ['**/storage/framework/views/**'],
+        },
+    },
+>>>>>>> 5ea0e07 (Initial commit for Render + Aiven setup)
 });
