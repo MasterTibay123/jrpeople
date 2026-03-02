@@ -1,5 +1,8 @@
 FROM php:8.2-fpm
 
+# Set memory for composer
+ENV COMPOSER_MEMORY_LIMIT=-1
+
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
     git \
