@@ -9,5 +9,5 @@ Route::post('/people/store', [PersonController::class, 'store'])->name('people.s
 Route::put('/people/{id}', [PersonController::class, 'update'])->name('people.update');
 Route::delete('/people/{id}', [PersonController::class, 'destroy'])->name('people.destroy');
 
-Route::get('/images', [ImageController::class, 'index']);
+Route::get('/upload-image', [ImageController::class, 'index']);
 Route::post('/upload-image', [ImageController::class, 'upload']);
