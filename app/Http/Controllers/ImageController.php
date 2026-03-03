@@ -19,23 +19,28 @@ class ImageController extends Controller
             'image' => 'required|image|max:2048'
         ]);
 
+        $file = $request->file('image');
+        $fileName = time() . '_' . $file->getClientOriginalName();
+
         $imageKit = new ImageKit(
             env('IMAGEKIT_PUBLIC_KEY'),
             env('IMAGEKIT_PRIVATE_KEY'),
             env('IMAGEKIT_URL_ENDPOINT')
         );
 
-        $file = $request->file('image');
+        try {
+            $uploadFile = $imageKit->uploadFile([
+                'file' => base64_encode(file_get_contents($file)),
+                'fileName' => $fileName
+            ]);
 
-        $uploadFile = $imageKit->uploadFile([
-            'file' => base64_encode(file_get_contents($file)),
-            'fileName' => time() . '_' . $file->getClientOriginalName()
-        ]);
+            Image::create([
+                'image_url' => $uploadFile->result->url
+            ]);
 
-        Image::create([
-            'image_url' => $uploadFile->result->url
-        ]);
-
-        return back()->with('success', 'Image uploaded');
+           return redirect('/upload-image')->with('success', 'Image uploaded');
+        } catch (\Exception $e) {
+            return back()->with('error', 'ImageKit upload failed: ' . $e->getMessage());
+        }
     }
 }
