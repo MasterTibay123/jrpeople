@@ -1,4 +1,4 @@
-FROM php:8.2-fpm
+FROM php:8.5-fpm
 
 # Set memory for composer
 ENV COMPOSER_MEMORY_LIMIT=-1
